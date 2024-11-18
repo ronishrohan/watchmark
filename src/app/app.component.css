@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument_serif_regular.ttf");
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist.ttf");
+}
+
+.dark{
+  --background: #111111;
+  --text: #ffffff;
+}
+
+.light{
+  --background: #ffffff;
+  --text: #000000;
+}
+
+
+html,
+body,
+.main {
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+}
