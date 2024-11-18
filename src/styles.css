@@ -2,3 +2,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument_serif_regular.ttf");
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist.ttf");
+}
+
+.dark {
+  --background: #111111;
+  --background-alt: #141414;
+  --text: #ffffff;
+  --text-invert: #ffffff;
+  --accent: #498620;
+  --accent-active:  #5ba12c;
+  --border: #242424;
+}
+
+.light {
+  --background: #fffdf7;
+  --background-alt: #ffffff;
+  --text: #000000;
+  --text-invert: #ffffff;
+  --accent: #498620;
+  --accent-active:  #5ba12c;
+  --border: #e4e2dc;
+}
+
+html,
+body,
+.main {
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  transition: all 0.05s ease-in-out;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

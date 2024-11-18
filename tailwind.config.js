@@ -6,7 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'background' : "var(--background)"
+        'background' : "var(--background)",
+        'background-alt' : "var(--background-alt)",
+
+        'accent' : "var(--accent)",
+        'accent-active' : "var(--accent-active)",
+        'text' : "var(--text)",
+        'text-invert' : "var(--text-invert)",
+        'border' : "var(--border)"
       },
       fontFamily: {
         'instrument': ['Instrument Serif', 'serif'],

@@ -1,12 +1,31 @@
+<style></style>
 
-<style>
-</style>
-
-<main class="main font-geist bg-background light">
-  <section class="size-full flex flex-col" >
+<main class="main font-geist bg-background">
+  <section class="size-full flex flex-col">
     <app-navbar></app-navbar>
+    <app-tooltip></app-tooltip>
+    <div class="px-32 size-full flex flex-col items-center">
+      <h1 class="text-6xl font-instrument mb-4 mt-12">Welcome back, Ronish</h1>
+      <div class="w-2/3 flex gap-2 h-12 relative">
+        <div
+          class="absolute top-0 left-0 h-full aspect-square flex items-center justify-center text-accent"
+        >
+          <mat-icon>auto_awesome</mat-icon>
+        </div>
+        <input
+          class="py-2 px-4 pl-12 w-full placeholder:text-text/50 text-text outline-none transition-all border-2 border-border bg-background-alt focus:border-accent focus:shadow-xl focus:shadow-black/20 text-lg rounded-lg"
+          type="text"
+          placeholder="What do you feel like watching today"
+        />
+        <app-button
+          tooltip="Generate list of movies"
+          classname=" h-full aspect-square  flex items-center justify-center text-lg"
+        >
+          <mat-icon>arrow_forward</mat-icon>
+        </app-button>
+      </div>
+    </div>
   </section>
 </main>
-
 
 <router-outlet />
