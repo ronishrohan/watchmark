@@ -7,7 +7,8 @@ import { TooltipServiceService } from '../../services/tooltip-service.service';
   standalone: true,
   imports: [],
   template: `<button
-    (mouseenter)="tooltipService.showTooltip();tooltipService.setTooltip(tooltip)"
+   #button
+    (mouseenter)="tooltipService.showTooltip(button);tooltipService.setTooltip(tooltip)"
     (mouseleave)="tooltipService.hideTooltip()"
     (click)="handleClickEvent()"
     [class]="mergedClasses"

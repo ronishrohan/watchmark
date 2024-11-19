@@ -8,8 +8,9 @@ import gsap from 'gsap';
   standalone: true,
   imports: [CommonModule],
   template: `<div
-    id="tooltip"
-    class="p-2 shadow-xl  fixed z-50 bg-white/0 pointer-events-none select-none backdrop-blur-lg shadow-black/10 border-2 border-border  rounded-lg w-fit"
+
+    #tooltip
+    class="p-2 shadow-xl -translate-x-1/2 translate-y-2 fixed z-50 bg-white/0 pointer-events-none select-none backdrop-blur-lg shadow-black/10 border-2 border-border  rounded-lg w-fit"
     [ngStyle]="{
       'top.px': pos.top,
       'left.px': pos.left,
@@ -29,10 +30,12 @@ export class TooltipComponent implements OnInit {
 
   constructor(private tooltipService: TooltipServiceService) {}
 
+
+
   ngOnInit(): void {
     this.tooltipService.tooltip$.subscribe((enabled) => {
       this.enabled = enabled;
-      gsap.to('#tooltip', {
+      gsap.to(this.tooltipElement?.nativeElement, {
         scale: enabled ? 1 : 0.9,
         opacity: enabled ? 1 : 0,
         duration: 0.3,
@@ -40,13 +43,17 @@ export class TooltipComponent implements OnInit {
       });
     });
 
+    this.tooltipService.pos$.subscribe((pos) => {
+      this.pos = pos;
+    })
+
     this.tooltipService.text$.subscribe((latest) => {
       this.text = latest;
     })
   }
 
-  @HostListener('window:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    this.pos = { top: event.clientY + 10, left: event.clientX + 10 };
-  }
+  // @HostListener('window:mousemove', ['$event'])
+  // onMouseMove(event: MouseEvent) {
+  //   this.pos = { top: event.clientY + 10, left: event.clientX + 10 };
+  // }
 }

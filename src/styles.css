@@ -20,6 +20,8 @@
   --accent: #498620;
   --accent-active:  #5ba12c;
   --border: #242424;
+  --border-active: #3a3a3a;
+  --card: #1a1a1a;
 }
 
 .light {
@@ -30,6 +32,8 @@
   --accent: #498620;
   --accent-active:  #5ba12c;
   --border: #e4e2dc;
+  --border-active: #c7c5c1;
+  --card: #ffffff;
 }
 
 html,
